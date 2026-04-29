@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "CanvaMCP": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.canva.com/mcp"],
+      "env": {}
+    }
+  }
+}
