@@ -1,0 +1,522 @@
+{
+  "_meta": {
+    "file_purpose": "Claude Code Master Orchestration File — 30-Day Life Reset Workbook",
+    "version": "4.0.0",
+    "goal": "Rank in top sellers on Etsy AND Gumroad. Dominate the '30 day life reset' keyword cluster. Drive sustained traffic via email marketing post-launch.",
+    "changes_from_v3": [
+      "ChatGPT confirmed for cover generation (front + back) — you handle manually",
+      "All Gemini and ChatGPT tasks are manual-paste handoffs — Claude will tell you exactly where to paste results",
+      "Email marketing phase elevated to core strategy (not afterthought)",
+      "Market domination strategy added: velocity hacking, review flywheel, keyword stacking, Gumroad-to-Etsy traffic bridge",
+      "Back cover content schema added",
+      "Etsy launch sequence tightened for early review velocity",
+      "Gumroad email capture strategy added for list building"
+    ],
+    "who_does_what": {
+      "Claude_Pro": "Content generation (all 9 chunks), CSV export, all listing copy, all email sequences, all support assets, strategic decisions",
+      "ChatGPT": "Front cover image + back cover image — YOU run manually, paste result path back here",
+      "Gemini_Advanced": "Behavioral audit of full manuscript — YOU run manually, paste numbered fix list back to Claude",
+      "Canva": "Daily pages via Bulk Create + manual design for all other pages — YOU do manually",
+      "You": "Orchestrate handoffs, paste results at flagged [PASTE HERE] points, upload to platforms, send emails"
+    },
+    "status_summary": {
+      "Phase_0": "COMPLETED — market data locked",
+      "Phase_1": "COMPLETED — positioning locked",
+      "Phase_1_1": "COMPLETED — front_cover.png.png + back_cover.png saved at project root (see notes_2026-04-27)",
+      "Phase_2": "COMPLETED — all 9 chunks saved in 30-day-life-reset/content/raw/",
+      "Phase_2_5": "COMPLETED — Gemini 3.1 Pro HIGH audit found 15 issues (13 HIGH, 2 MED), all applied",
+      "Phase_2_5b": "COMPLETED — fix verification 11/11 PASS",
+      "Phase_3": "COMPLETED — daily_pages.csv verified: 31 rows, 11 fields, max 115 chars, no LF in fields, UTF-8, all 30 mood emojis intact",
+      "Phase_4": "IN_PROGRESS — manual Canva build sheets generated to life_reset_output/canva/ — HANDOFF-3 active",
+      "Phase_5": "PENDING — packaging",
+      "Phase_6": "PENDING — Etsy + Gumroad listings",
+      "Phase_7": "PENDING — email launch sequence",
+      "Phase_8": "PENDING — post-launch review flywheel + email marketing",
+      "Phase_9": "PENDING — post-launch email marketing campaigns"
+    },
+    "notes_2026-04-27": {
+      "cover_filename_issue": "Front cover saved as front_cover.png.png (double extension). Rename to front_cover.png before Canva import.",
+      "cover_aspect_ratio": "back_cover.png is 1024x1536 (2:3 ratio), NOT US Letter (8.5:11 ≈ 0.773). Will need crop/resize in Canva.",
+      "cover_resolution": "Both covers below 2550x3300 print spec — front is 1103x1426 (~133 DPI on US Letter), back is 1024x1536. Acceptable for digital-only PDF, soft for print.",
+      "phase_4_mode": "Manual build with AI starter page reference. Canva MCP probed (one page generated as starter, see canva_starter_design); 30 daily pages still require manual Bulk Create — not exposed in Canva Connect API.",
+      "canva_starter_design": {
+        "design_id": "DAHIJC91cl4",
+        "title": "Document - Serenity Wellness",
+        "page_count": 1,
+        "edit_url": "https://www.canva.com/d/edbCjmdSoE55T8I",
+        "view_url": "https://www.canva.com/d/Lmza6oWbzbpQ5iU",
+        "purpose": "Visual reference only — adapt manually to match locked design system per life_reset_output/canva/07_ai_starter_design.md"
+      },
+      "csv_path": "30-day-life-reset/csv/daily_pages.csv (verified)",
+      "covers_path": "30-Day Life Reset Workbook/front_cover.png.png and back_cover.png (project root, not in covers/ subfolder)"
+    }
+  },
+
+  "market_domination_strategy": {
+    "objective": "Top 3 Etsy search position for '30 day life reset workbook' within 90 days of launch. Top 5 Gumroad for same keyword. Build email list of 500+ buyers in 60 days post-launch.",
+    "why_we_can_win": [
+      "Market is new — top listings have 0-2 reviews, meaning the algorithm hasn't crowned a winner yet",
+      "Our content quality will be 10x the competition (multi-model pipeline vs one-shot generation)",
+      "Our design system is premium — most competitors use basic Canva templates with no visual coherence",
+      "We are launching with a full email marketing engine — competitors have none",
+      "Our page count (80-90 pages with all bonuses) will dominate the value perception at $8.99"
+    ],
+    "etsy_ranking_factors": {
+      "primary": "Listing quality score — driven by click-through rate (cover image + title) and conversion rate (description + mockups)",
+      "secondary": "Review velocity — number of new reviews per week matters more than total reviews",
+      "tertiary": "Listing age and renewal — fresh listings get a temporary boost",
+      "our_tactics": [
+        "A/B test 2 cover images in first 2 weeks — keep the one with higher CTR",
+        "Launch at $5.99 for first 7 days (early adopter price) then raise to $8.99 — drives initial purchase velocity",
+        "Ask every buyer for a review via auto-delivery email (legal on Etsy)",
+        "Renew listing every 14 days manually to stay fresh in algorithm",
+        "Use all 13 tags — mix high-volume (life reset workbook) with low-competition long-tail (30 day clarity planner)"
+      ]
+    },
+    "gumroad_ranking_factors": {
+      "primary": "Sales velocity — Gumroad's discover page rewards recent sales",
+      "secondary": "Email capture rate — Gumroad rewards sellers who build lists",
+      "our_tactics": [
+        "Price at $8.99 with a 'Pay what you want' floor of $5 — increases conversion rate dramatically",
+        "Offer the Quick Start PDF as a free lead magnet to capture emails before purchase",
+        "Use Gumroad's built-in email feature to follow up with buyers",
+        "Cross-link: Etsy listing points to Gumroad for bundle upsell"
+      ]
+    },
+    "email_marketing_engine": {
+      "goal": "500 subscribers in 60 days post-launch, 30% open rate, 5% purchase rate on follow-up offers",
+      "list_building_tactics": [
+        "Free Quick Start PDF as lead magnet — 1 page, high value, no friction",
+        "Gumroad 'Pay what you want' captures email even at $0",
+        "Post-purchase auto-email with survey link — buyers who complete survey get a bonus tracker",
+        "Every email footer: 'Know someone who needs a reset? Forward this.'"
+      ],
+      "post_launch_campaign_structure": {
+        "week_1_2": "Onboarding sequence — 3 emails walking new buyers through days 1-7",
+        "week_3_4": "Engagement — 'How is your reset going?' check-in + bonus tip",
+        "month_2": "Upsell — introduce Core bundle or next product",
+        "ongoing_monthly": "One value email per month to keep list warm"
+      }
+    },
+    "content_moat": {
+      "what_competitors_cannot_copy_quickly": [
+        "Behavioral science pacing built into day sequencing",
+        "Momentum-first design (days 1-10 are emotional, not tactical)",
+        "CSV-to-Canva pipeline producing 30 uniquely-titled daily pages",
+        "Full email ecosystem connected to the product"
+      ]
+    }
+  },
+
+  "project": {
+    "name": "30-Day Life Reset Workbook",
+    "tagline": "Small shifts. Real momentum. Your reset starts here.",
+    "one_liner": "A gentle 30-day system that turns overwhelm into clarity through daily actions that actually stick.",
+    "product_type": "Digital-Only PDF (printable + screen versions)",
+    "launch_price_usd": 5.99,
+    "standard_price_usd": 8.99,
+    "price_note": "Launch at $5.99 for first 7 days to drive review velocity. Raise to $8.99 after first 10 sales.",
+    "export_formats": ["US Letter (8.5x11 in)", "A4 (210x297 mm)"],
+    "platforms": ["Etsy", "Gumroad"],
+    "target_page_count": "85-95 pages total (positions us as highest-value product at this price point)",
+    "framework_name": "4-Week Reset Framework",
+    "framework_weeks": {
+      "week_1": "Foundation — Energy & Awareness (Days 1-7)",
+      "week_2": "Momentum — Habits & Productivity (Days 8-14)",
+      "week_3": "Growth — Body, Mind, Environment (Days 15-21)",
+      "week_4": "Integration — Identity, Values, Future (Days 22-30)"
+    }
+  },
+
+  "tone_and_voice": {
+    "persona": "A calm, knowledgeable friend who has been where you are — not a coach, not a guru",
+    "emotional_arc": "Calm reassurance → gentle momentum → quiet confidence",
+    "voice_attributes": [
+      "Supportive without being saccharine",
+      "Direct but gentle — clear instructions with compassionate framing",
+      "Empowerment-focused — reinforces user agency: 'You choose', 'Your reset, your way'",
+      "Active and hopeful — momentum verbs: shift, build, reclaim, reconnect"
+    ],
+    "must_use": ["Let's", "You've got this", "Small wins add up", "Progress, not perfection"],
+    "must_avoid": [
+      "Transform your life overnight",
+      "Just commit harder",
+      "Ultimate solution",
+      "Optimize, hack, dominate, crush",
+      "Journey, unlock, level up, supercharge",
+      "Religious or spiritual framing"
+    ],
+    "formatting_rules": "Max 2-line paragraphs. Ample white space. Conversational prompts. Modular — users can skip or repeat days.",
+    "inclusivity": "Gender-neutral. Diverse scenarios (career, parenting, health, relationships). No assumptions about income or lifestyle.",
+    "missed_days_language": "Normalize at days 8, 15, 22. Never shame. Example: 'Missed a day? That's the reset too. Pick up here.'"
+  },
+
+  "target_audience": {
+    "primary_persona": "The Overwhelmed Restarter",
+    "demographics": "Women aged 28-45, college-educated, working professionals or parents",
+    "pain_points": ["Stuck in autopilot", "Overwhelmed by competing priorities", "Disconnected from personal goals", "Wants to change but doesn't know where to start"],
+    "aspirations": ["Regain control", "Reconnect with values", "Build sustainable habits without added pressure", "Feel like themselves again"],
+    "behavioral_traits": ["Buys self-help content but rarely finishes it", "Wants structure but fears rigid systems", "Values quick wins", "Prefers gentle guidance over hustle motivation"],
+    "positioning_statement": "For overwhelmed professionals and caregivers who feel stuck in autopilot and need a reset but don't know where to start, the 30-Day Life Reset Workbook is a guided clarity system that builds sustainable momentum through bite-sized daily actions because it meets you where you are — with zero judgment and full flexibility — instead of demanding you overhaul everything at once."
+  },
+
+  "canva_csv_schema": {
+    "critical_rule": "Headers are LOCKED. Do not rename after Canva mapping. Any rename breaks Bulk Create.",
+    "headers": ["Day_Number","Title","Goal","Task_1","Task_2","Task_3","Quick_Win","Why_It_Works","Reflection","Mood_Scale","Tomorrow_Focus"],
+    "field_constraints": {
+      "max_characters_per_field": 200,
+      "line_breaks_inside_fields": "FORBIDDEN — Canva reads them as new rows",
+      "commas_inside_fields": "Wrap entire field in double quotes",
+      "internal_double_quotes": "Escape by doubling: use '' not \\\"",
+      "Mood_Scale_value": "😊 / 😐 / 😔",
+      "Mood_Scale_in_canva": "Fixed literal text element — do NOT bind to CSV column",
+      "encoding": "UTF-8 — verify in plain text editor, never Excel"
+    }
+  },
+
+  "visual_design_system": {
+    "style": "Minimal, calm, premium, wellness-native — looks at home in a wellness bookshop",
+    "color_palette": {
+      "primary_background": "#FAF8F6",
+      "secondary_background": "#FAF9F7",
+      "warm_section_background": "#EFE8DF",
+      "accent_sage_green": "#848B6F",
+      "text_primary": "#333333",
+      "text_secondary": "#4D4D4D"
+    },
+    "typography": {
+      "header_font": "Montserrat or Inter — regular weight, all-caps for RESET only",
+      "body_font": "Inter or Helvetica Neue",
+      "accent_font": "Thin delicate serif or organic script for subheaders and decorative callouts only"
+    },
+    "design_elements": [
+      "Generous white space — breathing room IS the design",
+      "Rounded corners on all text boxes",
+      "Subtle botanical line illustrations (sage leaf, minimal branch)",
+      "No bold geometric patterns",
+      "No hustle/productivity aesthetics",
+      "Small star and circle accents for emphasis"
+    ],
+    "page_layout_grid": {
+      "top_zone": "15% — day number + title + goal",
+      "middle_zone": "55-60% — tasks, quick win, why it works",
+      "bottom_zone": "25-30% — mood check, reflection, tomorrow focus"
+    },
+    "mockup_strategy": {
+      "note": "Mockups are your #1 Etsy conversion tool. Invest time here.",
+      "required_mockups": [
+        "Cover flat lay on neutral linen surface with a cup of tea",
+        "Interior daily page spread (Days 5-6 open) showing clean layout",
+        "Habit tracker page close-up",
+        "Phone screen mockup showing digital use",
+        "All 3 mockups together as a lifestyle bundle shot"
+      ],
+      "mockup_tool": "Use Canva Smart Mockups or Placeit.net"
+    }
+  },
+
+  "cover_design": {
+    "tool": "ChatGPT image generation — YOU run manually",
+    "note": "Generate BOTH front and back covers in ChatGPT. Save as high-res PNG. Import into Canva as the first and last pages.",
+
+    "front_cover_prompt": "Create a minimalist, premium, and aesthetically calm cover for a self-improvement workbook called 'THE 30-DAY LIFE RESET WORKBOOK'. Style: modern wellness, botanical, editorial. Central element: a large-scale minimalist botanical branch illustration with sage-green leaves (#848B6F), single stem, clean delicate linework — no color fills, just line art. Background: soft textured cream/beige (#FAF8F6). Typography hierarchy: Line 1 — 'THE' in very small thin caps, centered. Line 2 — '30-DAY LIFE RESET' in large clean all-caps sans-serif (Montserrat style), bold visual weight. Line 3 — 'WORKBOOK' in medium regular weight, spaced out. Beneath: a thin horizontal rule, then small delicate italic or script text: 'A Gentle Guide to Clarity & Momentum'. Small decorative star accents near title. Overall mood: calm, breathable, looks like a premium wellness journal from a boutique bookshop. US Letter dimensions (8.5x11 inches). No photography. Illustration only. High resolution.",
+
+    "back_cover_prompt": "Create the back cover for the same 30-Day Life Reset Workbook. Same visual system as the front: cream/beige background (#FAF8F6), sage-green botanical line illustration (smaller, bottom corner accent only), same typography system. Layout from top to bottom: (1) Small botanical sprig in top left corner. (2) Tagline centered: 'Small shifts. Real momentum. Your reset starts here.' in medium sans-serif, calm weight. (3) Below: a soft rounded rectangle box containing a 5-bullet list of what's inside: '30 guided daily pages', 'Life Audit & Goal Setting', 'Habit & Mood Trackers', 'Weekly Checkpoints', '50 Tiny Habits Bonus'. Bullets styled with small leaf icons. (4) Near bottom: 'Digital Download — PDF Format — US Letter & A4'. (5) Very bottom: barcode placeholder rectangle (no real barcode needed, just the visual block) + small price tag '$8.99' in light text. Same calm, premium, breathable mood as front cover. US Letter dimensions.",
+
+    "handoff_instruction": "After generating both images in ChatGPT, save them as: front_cover.png and back_cover.png. Import into Canva as the first and last pages of your workbook. Then tell Claude: 'Covers done, proceeding to Phase 2.'"
+  },
+
+  "market_research": {
+    "status": "COMPLETED — DO NOT RE-RUN",
+    "etsy_top_listings": [
+      {"rank": 1, "title": "Life Reset Workbook | 30 Day Self Improvement Planner (Digital Download)", "price_usd": 1.69, "page_count": "unk", "reviews": 1, "url": "https://www.etsy.com/listing/4467452223/life-reset-workbook-30-day-self", "tags": ["life reset workbook","30 day self improvement planner","personal growth","self improvement","digital download","printable planner","habit building","mindset transformation","life audit worksheet","habits to change","new life vision","life reset action plan","goal setting"]},
+      {"rank": 2, "title": "30-Day Life Reset Workbook | Goal Setting, Habit Tracker, Faith-based (PDF Download)", "price_usd": 8.68, "page_count": "37", "reviews": 0, "url": "https://www.etsy.com/listing/4492354669/30-day-life-reset-workbook-goal-setting"},
+      {"rank": 3, "title": "30-Day Life Reset Planner | Mindset, Goals & Habits Workbook", "price_usd": 7.81, "page_count": "50+", "reviews": 2, "url": "https://www.etsy.com/listing/4438957526/30-day-life-reset-planner-mindset-goals", "tags": ["life reset planner","mindset reset","habit tracker","goal setting","self improvement workbook","daily planner","digital download","printable planner","personal growth","life audit","30 day challenge","women planner","pdf planner"]},
+      {"rank": 4, "title": "PLR 20-Day Life Reset Planner for Commercial Use", "price_usd": 3.01, "page_count": "27", "reviews": 224, "url": "https://www.etsy.com/listing/4479702132/plr-20-day-life-reset-planner-for"},
+      {"rank": 5, "title": "30-Day Reset Guide | Daily Habit Tracker, Mindset & Self-Care Planner", "price_usd": 5.07, "page_count": "unk", "reviews": 2, "url": "https://www.etsy.com/listing/4453814625/30-day-reset-guide-daily-habit-tracker"},
+      {"rank": 6, "title": "30-Day Life Reset System Workbook 2026 | Habit Tracker, Self-Improvement", "price_usd": 24.63, "page_count": "20+", "reviews": 0, "url": "https://www.etsy.com/listing/4489676578/30-day-life-reset-system-workbook-habit"},
+      {"rank": 7, "title": "30 Day Life Reset Planner Printable PDF", "price_usd": 5.65, "page_count": "unk", "reviews": 1, "url": "https://www.etsy.com/listing/4475421157/30-day-life-reset-planner-printable-pdf"},
+      {"rank": 8, "title": "30 Day Life Reset Planner Printable | Self Improvement Workbook | Habit Tracker PDF", "price_usd": 3.91, "page_count": "unk", "reviews": 0, "url": "https://www.etsy.com/listing/4490906431/30-day-life-reset-planner-printable-self"},
+      {"rank": 9, "title": "Soft Life Reset Planner | 30 Day Self Care Journal", "price_usd": 2.60, "page_count": "43", "reviews": 0, "url": "https://www.etsy.com/listing/4490127789/soft-life-reset-planner-30-day-self-care"},
+      {"rank": 10, "title": "30-Day Life Reset System | Guided Daily Self-Improvement PDF", "price_usd": 10.62, "page_count": "unk", "reviews": 0, "url": "unk"}
+    ],
+    "gumroad_top_listings": [
+      {"rank": 1, "title": "The 30-DAY LIFE RESET WORKBOOK", "price_usd": 17, "page_count": "80", "headline": "A guided clarity journey for anyone ready to feel grounded, focused, and back in control.", "url": "https://theresetproject.gumroad.com/l/30-day-life-reset-workbook"},
+      {"rank": 2, "title": "30-Day Spiritual Reset Challenge (PDF Workbook)", "price_usd": 12.99, "page_count": "35", "url": "https://ecliptigrace.gumroad.com/l/jhsrao"},
+      {"rank": 3, "title": "The Hard Reset: 14-Day Life Reboot System", "price_usd": 19.99, "page_count": "unk", "url": "https://focusedmindco.gumroad.com/l/ksfbw"},
+      {"rank": 4, "title": "30 Day Wellness Reset: A Realistic Workbook", "price_usd": 19.00, "page_count": "40", "url": "https://logandawsonhealth.gumroad.com/l/mfwwa"},
+      {"rank": 5, "title": "The Quiet Power Reset (30-Day 15-Minute Challenge)", "price_usd": 17.00, "page_count": "11", "url": "https://lydiapyatt.gumroad.com/l/quiet-power-reset"}
+    ],
+    "analysis": {
+      "market_opportunity": "Top Etsy listings have 0-2 reviews. Market is not yet dominated. Window is open NOW.",
+      "top_20_keywords": ["life","reset","workbook","30","day","planner","self","improvement","habit","tracker","digital","printable","mindset","goal","setting","pdf","daily","challenge","wellness","spiritual"],
+      "pricing_insight": "Under $10 average is $4.80. We launch at $5.99 then move to $8.99 — stays in sweet spot while outvaluing all sub-$6 competitors by 10x on page count.",
+      "key_gap_to_exploit": "No competitor has a design-premium, behaviorally-sequenced, email-backed product at this price. We are bringing a machine gun to a knife fight."
+    }
+  },
+
+  "phases": {
+
+    "Phase_0_and_1": {
+      "status": "COMPLETED — all data locked above",
+      "action": "None. Proceed to Phase 1.1."
+    },
+
+    "Phase_1_1_Cover_Generation": {
+      "status": "PENDING — YOUR ACTION REQUIRED",
+      "tool": "ChatGPT image generation",
+      "your_action": [
+        "1. Open ChatGPT",
+        "2. Paste the front_cover_prompt from cover_design block above",
+        "3. Generate, refine if needed, export as front_cover.png",
+        "4. Paste the back_cover_prompt",
+        "5. Generate, refine, export as back_cover.png",
+        "6. Save both to your project folder",
+        "7. Come back to Claude and say: 'Covers done, starting Phase 2'"
+      ],
+      "qa_check": "Cover should look indistinguishable from a premium wellness product on Amazon or in a boutique. If it looks like a free Canva template, regenerate."
+    },
+
+    "Phase_2_Content_Generation": {
+      "status": "PENDING — MAIN CLAUDE TASK",
+      "tool": "Claude Pro",
+      "output_folder": "./life_reset_output/content/raw/",
+      "output_files": ["chunk_01.md","chunk_02.md","chunk_03.md","chunk_04.md","chunk_05.md","chunk_06.md","chunk_07.md","chunk_08.md","chunk_09.md"],
+
+      "claude_code_opening_prompt": "You are a senior behavioral designer and self-improvement author. You are writing the 30-Day Life Reset Workbook — a calm, premium digital product targeting women aged 28-45 who feel stuck, overwhelmed, or off-track. This product will be sold on Etsy and Gumroad and is designed to rank in the top sellers. Content quality must be exceptional.\n\nFRAMEWORK — 4-Week Reset:\n- Week 1: Foundation — Energy & Awareness (Days 1-7)\n- Week 2: Momentum — Habits & Productivity (Days 8-14)\n- Week 3: Growth — Body, Mind, Environment (Days 15-21)\n- Week 4: Integration — Identity, Values, Future (Days 22-30)\n\nBEHAVIORAL PACING RULES:\n- Days 1-10: Small wins and emotional recalibration ONLY. No big goal-setting yet.\n- Days 11-20: Introduce structured habits. One new habit category per week max.\n- Days 21-30: Identity-level reflection and future planning.\n- Motivation touchpoints REQUIRED at: Day 1, Day 3, Day 10, Day 17, Day 24, Day 30.\n- Normalize missed days gently at days 8, 15, 22 with restart permission language.\n\nTONE RULES (mandatory, never break):\n- Max 2-line paragraphs. Simple language. No fluff.\n- Must use: 'Let's', 'You've got this', 'Small wins add up', 'Progress not perfection'\n- Must avoid: transform, journey, unlock, level up, optimize, hack, dominate, spiritual framing\n- Never shame or guilt the reader\n\nDAILY PAGE SCHEMA — every field, every day, no exceptions:\nDay_Number | Title | Goal | Task_1 | Task_2 | Task_3 | Quick_Win | Why_It_Works | Reflection | Mood_Scale | Tomorrow_Focus\n\nFIELD CONSTRAINTS:\n- Max 200 characters per field (Canva text box limit)\n- No line breaks inside any field\n- Every task must be realistically completable in under 10 minutes — be concrete, not vague\n- Mood_Scale is always exactly this string: 😊 / 😐 / 😔\n\nGENERATE IN ORDER — one chunk per reply, wait for 'next' before continuing:\n\nCHUNK 1 — Front Matter:\n- Cover blurb (2 powerful sentences that earn the sale)\n- Quick Start page: reader can begin within 60 seconds of opening\n- Why You Feel Stuck: simple 3-paragraph model, no psychobabble, ends with hope\n- How to Use This Workbook: modular system, skip/repeat days, no guilt\n\nCHUNK 2 — Setup Pages:\n- Life Audit: 8 life areas (health, energy, relationships, work, finances, home, growth, joy), 1 prompt each, rate 1-10, 'where am I now vs where I want to be'\n- 90-Day Vision page: 3 prompts — 'In 90 days I want to feel...', 'The biggest shift I want to make is...', 'The one thing holding me back is...'\n- 30-Day Focus page: single primary intention for this reset\n\nCHUNK 3 — Week 1 Overview + Days 1-7\nWeek overview: what this week is about, what to expect, gentle encouragement. Then all 7 days with every schema field.\n\nCHUNK 4 — Week 2 Overview + Days 8-14\nInclude missed-day reset note at Day 8. All 7 days with every schema field.\n\nCHUNK 5 — Week 3 Overview + Days 15-21\nInclude missed-day reset note at Day 15. All 7 days with every schema field.\n\nCHUNK 6 — Week 4 Overview + Days 22-30\nInclude missed-day reset note at Day 22. All 9 days (22-30) with every schema field.\n\nCHUNK 7 — Weekly Checkpoint Pages (4 pages: Day 7, 14, 21, 30):\nEach checkpoint: What worked this week, What felt heavy, One thing I'm proud of, One thing to adjust, Restart permission note, 'You made it to Day [X]. That matters.'\n\nCHUNK 8 — Trackers (6 tracker pages):\n- Monthly Habit Grid: 6 core habits × 30 days (sleep, water, move, read, journal, one personal habit)\n- Mood Tracker: 30-day grid with emoji scale\n- Weekly Review Template: reusable single-page\n- 5 Category Trackers: health, productivity, home, money, relationships — one page each, simple checkboxes + notes\n\nCHUNK 9 — Bonuses (3 bonus sections):\n- 50 Tiny Habits sorted by category (health, mind, productivity, home, money, relationships) — 6-9 per category, all under 5 minutes each\n- 7-Day Emergency Reset: condensed version for someone who needs to restart fast, days 1-7 ultra-simplified\n- 90-Day Continuation Roadmap: 3 monthly themes, 3 focus areas per month, bridges to what comes after the reset\n\nSave each chunk as chunk_0X.md in ./life_reset_output/content/raw/ before writing the next one.\n\nStart with CHUNK 1 now.",
+
+      "chunk_map": [
+        {"id": "chunk_01", "section": "Front Matter", "pages_approx": 4},
+        {"id": "chunk_02", "section": "Setup Pages", "pages_approx": 4},
+        {"id": "chunk_03", "section": "Week 1 + Days 1-7", "pages_approx": 9},
+        {"id": "chunk_04", "section": "Week 2 + Days 8-14", "pages_approx": 9},
+        {"id": "chunk_05", "section": "Week 3 + Days 15-21", "pages_approx": 9},
+        {"id": "chunk_06", "section": "Week 4 + Days 22-30", "pages_approx": 11},
+        {"id": "chunk_07", "section": "Checkpoints", "pages_approx": 4},
+        {"id": "chunk_08", "section": "Trackers", "pages_approx": 8},
+        {"id": "chunk_09", "section": "Bonuses", "pages_approx": 10}
+      ],
+
+      "your_action_after_all_chunks": [
+        "1. Concatenate all 9 chunk files into one document: all_chunks_combined.md",
+        "2. Open Gemini Advanced (2.5 Pro)",
+        "3. Paste the Gemini audit prompt below",
+        "4. Paste all_chunks_combined.md into the same message",
+        "5. Wait for Gemini's numbered fix list",
+        "6. Come back to Claude and say: 'Gemini audit complete. Here are the fixes: [PASTE LIST]'"
+      ]
+    },
+
+    "Phase_2_5_Gemini_Audit": {
+      "status": "PENDING — YOUR MANUAL ACTION",
+      "tool": "Gemini Advanced 2.5 Pro — you run manually",
+      "what_you_do": "Paste ALL 9 chunks concatenated + the prompt below into Gemini. Paste results back to Claude.",
+
+      "gemini_audit_prompt": "You are a behavioral science reviewer and editorial auditor. You will review the full manuscript of a 30-day life reset workbook.\n\nMANDATORY OUTPUT FORMAT — numbered list only, no prose:\n[Chunk/Day/Section] — [Severity: HIGH/MED/LOW] — [Issue type] — [Exact fix in one sentence]\n\nIf a section passes all checks, say nothing. Silence = approved. Output ONLY issues.\n\nAUDIT CHECKLIST:\n1. Tasks exceeding 10 minutes (HIGH)\n2. Weeks introducing more than 3 new behaviors (HIGH)\n3. Repeated tasks across days — same action, different wording (MED)\n4. Missing motivation at Days 3, 10, 17, 24 (MED)\n5. Tone violations: perfectionism, guilt, shame, hustle culture (HIGH)\n6. Banned words present: transform, journey, unlock, level up, optimize, hack, dominate (MED)\n7. Fields likely over 200 characters — count carefully (HIGH)\n8. Emotional arc broken — should escalate: calm reassurance → gentle momentum → quiet confidence (MED)\n9. Behavioral pacing violated: Days 1-10 should be emotional only, no big goals (HIGH)\n10. Any field missing from the daily schema — Day_Number, Title, Goal, Task_1, Task_2, Task_3, Quick_Win, Why_It_Works, Reflection, Mood_Scale, Tomorrow_Focus (HIGH)\n\nRank all HIGH severity issues first. Then MED. Then LOW.\n\n[PASTE ALL 9 CHUNKS BELOW THIS LINE]",
+
+      "claude_receives_fixes_prompt": "Gemini audit complete. Apply the following fixes exactly as specified. For each fix, confirm which day/section was changed and what the new text is. Do not change anything not on the list. Output the corrected chunks as chunk_01_final.md through chunk_09_final.md.\n\nFixes to apply:\n[PASTE GEMINI FIX LIST HERE]"
+    },
+
+    "Phase_3_CSV_Export": {
+      "status": "PENDING — CLAUDE TASK after Gemini fixes applied",
+      "tool": "Claude Pro",
+      "output_file": "daily_pages.csv",
+      "output_folder": "./life_reset_output/csv/",
+
+      "csv_export_prompt": "Using the finalized audited daily pages (chunks 3-6 final versions), output a single CSV. No preamble. No explanation. Raw CSV in one code block only.\n\nHeaders (exact, locked, do not alter):\nDay_Number,Title,Goal,Task_1,Task_2,Task_3,Quick_Win,Why_It_Works,Reflection,Mood_Scale,Tomorrow_Focus\n\nRules:\n- 30 data rows only (Days 1-30)\n- Wrap any field containing a comma in double quotes\n- No line breaks inside any field\n- Escape internal double quotes by doubling\n- Mood_Scale every row: 😊 / 😐 / 😔\n\nOutput now.",
+
+      "your_verification_steps": [
+        "Open daily_pages.csv in plain text editor (NOT Excel — corrupts emoji)",
+        "Count rows: must be exactly 31 (1 header + 30 data rows)",
+        "Verify Mood_Scale emoji renders in row 1",
+        "Upload to Canva Bulk Create — map columns — generate 1 test page ONLY first",
+        "Verify test page: all fields populated, no truncation, layout clean",
+        "If test passes, generate remaining 29 pages"
+      ]
+    },
+
+    "Phase_4_Canva_Design": {
+      "status": "IN_PROGRESS — manual build sheets at life_reset_output/canva/, awaiting Canva execution",
+      "tool": "Canva",
+
+      "critical_rule": "Build master template and test with ONE fake row BEFORE you write or paste any real content into Canva. Do not skip this.",
+
+      "workflow": [
+        "STEP 1 — Create master daily page (US Letter). Apply color palette and fonts from visual_design_system.",
+        "STEP 2 — Add text boxes named exactly: {Day_Number}, {Title}, {Goal}, {Task_1}, {Task_2}, {Task_3}, {Quick_Win}, {Why_It_Works}, {Reflection}, {Tomorrow_Focus}",
+        "STEP 3 — Add Mood_Scale as a fixed text element (NOT bound to CSV): 😊 / 😐 / 😔",
+        "STEP 4 — Upload daily_pages.csv via Bulk Create. Map columns. Generate 1 test page first.",
+        "STEP 5 — Verify test page fully. If good, generate 29 more.",
+        "STEP 6 — Manually design all non-daily pages: front cover (import front_cover.png), 4 week dividers, 4 checkpoint pages, 6 tracker pages, 3 bonus section pages, back cover (import back_cover.png).",
+        "STEP 7 — Assemble in final page order (see page_order below).",
+        "STEP 8 — Export PDF Print Quality — US Letter. Repeat for A4.",
+        "STEP 9 — Create 5 mockup images using Canva Smart Mockups or Placeit.net (see mockup_strategy in visual_design_system)."
+      ],
+
+      "page_order": [
+        "1. Front Cover",
+        "2. Quick Start Page",
+        "3. Why You Feel Stuck",
+        "4. How to Use This Workbook",
+        "5. Life Audit",
+        "6. 90-Day Vision + 30-Day Focus",
+        "7. Week 1 Overview",
+        "8-14. Days 1-7 (bulk created)",
+        "15. Day 7 Checkpoint",
+        "16. Week 2 Overview",
+        "17-23. Days 8-14 (bulk created)",
+        "24. Day 14 Checkpoint",
+        "25. Week 3 Overview",
+        "26-32. Days 15-21 (bulk created)",
+        "33. Day 21 Checkpoint",
+        "34. Week 4 Overview",
+        "35-43. Days 22-30 (bulk created)",
+        "44. Day 30 Checkpoint",
+        "45. Monthly Habit Tracker Grid",
+        "46. Mood Tracker",
+        "47. Weekly Review Template",
+        "48-52. Category Trackers x5",
+        "53. Bonus: 50 Tiny Habits",
+        "54. Bonus: 7-Day Emergency Reset",
+        "55. Bonus: 90-Day Roadmap",
+        "56. Back Cover"
+      ],
+
+      "qa_checklist": [
+        "Can a new user start within 60 seconds using the Quick Start page?",
+        "Does every daily page have exactly one primary action (not cluttered)?",
+        "Is text readable and not truncated on any page?",
+        "Does the cover look like the top 3 Etsy wellness listings?",
+        "Do both US Letter and A4 PDFs open cleanly in Adobe Reader and iPhone Files?"
+      ]
+    },
+
+    "Phase_5_Packaging": {
+      "status": "PENDING — CLAUDE TASK",
+      "tool": "Claude Pro",
+      "output_folder": "./life_reset_output/",
+
+      "deliverables": [
+        "Main_Workbook_US_Letter.pdf",
+        "Main_Workbook_A4.pdf",
+        "Quick_Start_Guide.pdf (cover + Quick Start page only — 2 pages — used as free lead magnet)",
+        "CHANGELOG.md",
+        "30_Day_Life_Reset_Workbook_v1.zip (all above)"
+      ],
+
+      "changelog_prompt": "Write a CHANGELOG.md for v1.0.0 of the 30-Day Life Reset Workbook. Include: release date placeholder [DATE], list of all included files, page count (US Letter and A4), format details, and a buyer note explaining how to access future updates if they purchased on Gumroad."
+    },
+
+    "Phase_6_Listings": {
+      "status": "PENDING — CLAUDE TASK",
+      "tool": "Claude Pro",
+      "output_folder": "./life_reset_output/listings/",
+
+      "etsy_listing_prompt": "Write the complete Etsy listing for the 30-Day Life Reset Workbook ($5.99 launch price, rising to $8.99). Use the competitor patterns and keyword data from the market_research block.\n\nOutput in this exact order:\n\n1. THREE title variants (each under 140 chars, keyword-stacked, pipe | separator, natural not spammy)\n   Best title is the one that stacks: primary keyword + secondary keyword + format + unique angle\n\n2. 13 TAGS (max 20 chars each, no duplicates, no plural/singular pairs, mix high-volume and long-tail)\n\n3. FULL DESCRIPTION — sections in this order:\n   HOOK (2 sentences — empathy-first, mirror the reader's feeling, end on possibility)\n   WHO IS THIS FOR (3 short bullets)\n   WHAT'S INSIDE (full list — every section, mention page count: 85-95 pages)\n   HOW IT WORKS DAY TO DAY (walk through Day 3 as a concrete example)\n   THE 4-WEEK FRAMEWORK (brief overview of Foundation-Momentum-Growth-Integration)\n   WHAT YOU GET (file formats, sizes, instant download, both US Letter and A4)\n   HOW TO USE (print or digital, compatible with any device)\n   FAQ (3 questions: can I print it, what if I miss days, is this beginner friendly)\n\nTone: calm, warm, specific. No hype. No fake urgency. Mirror the top competitors' hook patterns.\n\nSave as etsy_listing.md",
+
+      "gumroad_listing_prompt": "Write the full Gumroad product page for the 30-Day Life Reset Workbook ($8.99, Pay What You Want with $5 floor). Gumroad rewards long-form pages that feel like a letter from a friend.\n\nStructure:\n1. HEADLINE (under 80 chars — specific, benefit-driven)\n2. SUB-HEADLINE (one sentence — the core promise)\n3. PROBLEM SECTION (3 paragraphs — describe the stuck feeling concretely, no drama, ends with: 'You don't need a complete overhaul. You need a starting point.')\n4. THE SYSTEM (what the 30 days actually does — explain the 4-week arc briefly)\n5. WHAT'S INSIDE (bulleted list — every section, page count: 85-95 pages)\n6. A DAY IN THE WORKBOOK (walk through Day 3 using actual content from chunk_03)\n7. WHO THIS IS FOR / WHO IT IS NOT FOR (2 short lists)\n8. FAQ (5 questions: refund policy, printing, beginner fit, difference from other planners, realistic results timeline)\n9. CLOSING CTA (one calm paragraph, no pressure, ends with purchase link placeholder [LINK])\n\nVoice: second person, calm, specific, no clichés. Average sentence under 20 words.\n\nSave as gumroad_landing.md",
+
+      "platform_setup_tasks": [
+        "Etsy: Upload ZIP, set price to $5.99 (launch), configure digital delivery, add all 5 mockup images",
+        "Etsy: Add all 13 tags, use best-performing title variant (test A/B after 48 hours)",
+        "Etsy: Set listing to 'renew automatically' — renew manually every 14 days for algorithm boost",
+        "Gumroad: Upload ZIP, set price $8.99 with Pay What You Want floor $5, enable email capture",
+        "Gumroad: Set Quick_Start_Guide.pdf as a free lead magnet (separate free listing)",
+        "Gumroad: Link free lead magnet in Etsy listing description as a bonus"
+      ]
+    },
+
+    "Phase_7_Launch_Email_Sequence": {
+      "status": "PENDING — CLAUDE TASK",
+      "tool": "Claude Pro",
+      "output_folder": "./life_reset_output/emails/",
+
+      "email_sequence_prompt": "Write a 3-email launch sequence for the 30-Day Life Reset Workbook. Audience: women 28-45, overwhelmed, want to change but don't know where to start. Tone: calm, warm, direct — like a knowledgeable friend, not a marketer. Use the must_use phrases and avoid the must_avoid phrases from the tone_and_voice block.\n\nEMAIL 1 — TEASER (send 2 days before launch, subject line + body):\n- Subject: curiosity-driven, no clickbait, under 50 chars\n- 150-200 words\n- Acknowledge the stuck feeling without over-dramatizing\n- Hint at something coming without revealing product or price\n- End: 'I'll share everything in 2 days. Watch for my email.'\n- PS line: something warm and personal\n\nEMAIL 2 — LAUNCH DAY (subject + body + CTA):\n- Subject: specific, benefit-driven, under 50 chars\n- 250-300 words\n- Open with the problem in 2 sentences\n- Introduce the workbook naturally (not as a pitch)\n- List what's inside: 5 bullets max\n- Early adopter price: '$5.99 for the next 7 days, then $8.99'\n- CTA: low-pressure. 'If it feels right: [LINK]'\n- PS: address the 'I'll start later' hesitation in 1 sentence\n\nEMAIL 3 — LAST CALL (48 hours before price rise, subject + body):\n- Subject: gentle urgency, no fake scarcity, under 50 chars\n- 150-200 words\n- Address the hesitating reader directly — name the hesitation, dissolve it in 2 sentences\n- Restate the core promise in one line\n- Price reminder: '$5.99 until [DATE], then $8.99'\n- CTA: one line, direct\n- No countdown timers, no 'last chance forever' language\n\nSave each as email_01_teaser.md, email_02_launch.md, email_03_lastcall.md",
+
+      "auto_delivery_email_prompt": "Write the auto-delivery email sent to buyers immediately after purchase on Gumroad and Etsy. This email is critical — it sets the tone for the entire buyer relationship and asks for a review.\n\nLength: 200-250 words. Tone: warm, calm, like a friend handing you something they made.\n\nStructure:\n- Subject line: confirms purchase, creates anticipation\n- Opening: thank them warmly (not effusively — one sentence)\n- What's in their download: list the 3-4 files clearly\n- 3 quick-start tips to get the most from Day 1\n- Review ask: natural, not pushy. 'If this workbook helps you, a quick review means the world — it takes 30 seconds and helps others find it.' + link placeholder [REVIEW LINK]\n- Sign off: warm, first-person, feels human\n- PS: link to feedback survey [SURVEY LINK] with a small incentive: 'Complete the 2-minute survey and I'll send you a bonus tracker sheet.'\n\nSave as email_auto_delivery.md"
+    },
+
+    "Phase_8_Post_Launch_Review_Flywheel": {
+      "status": "PENDING — activate after first 10 sales",
+      "strategy": "Reviews are the #1 Etsy ranking signal. We build a systematic flywheel.",
+      "tool": "Claude Pro for copy, you execute manually",
+
+      "review_flywheel_sequence": [
+        "Day 0 — Auto-delivery email sent (Phase 7 prompt) — includes review request",
+        "Day 7 — Follow-up email: 'How is your reset going?' — soft check-in, includes Day 7 tip, gentle second review ask",
+        "Day 14 — Milestone email: 'Two weeks in — you've got this' — value add (bonus habit list), third and final review ask",
+        "Day 30 — Completion email: 'You did 30 days. What's next?' — celebrate, soft upsell to future product, ask for testimonial"
+      ],
+
+      "day_7_followup_prompt": "Write a 150-word follow-up email sent 7 days after purchase. Subject: warm check-in. Content: acknowledge they are in Week 1, share one unexpected tip for Days 8-10 (the hardest days). Gently ask: 'If the workbook has already helped, a quick review on [PLATFORM] would mean everything.' No pressure close.",
+
+      "day_30_completion_prompt": "Write a 200-word completion email for buyers who have reached Day 30. Celebrate genuinely (not over the top). Ask for a testimonial: 'Would you share one sentence about your experience? I'd love to feature it.' Soft bridge to what comes next (hint at a future product without hard-selling). Make this email feel like the end of a shared journey.",
+
+      "support_assets_prompt": "Write 3 customer support assets:\n\n1. SUPPORT EMAIL TEMPLATE (FAQ) — covers: file not downloading, how to print, can they edit the PDF, refund requests, how to use on phone or tablet. Warm and fast to resolve. Under 200 words.\n\n2. FEEDBACK SURVEY QUESTIONS (for Google Forms) — 5 questions only, takes under 2 minutes: overall satisfaction 1-5, favorite section, what was missing, would they recommend, any other comments.\n\n3. REVIEW RESPONSE TEMPLATE — for responding to positive Etsy reviews publicly. Warm, specific, never copy-paste feeling. Under 50 words.\n\nSave as support_faq.md, feedback_survey.md, review_response_template.md"
+    },
+
+    "Phase_9_Email_Marketing_Post_Launch": {
+      "status": "PENDING — activate after list reaches 100 subscribers",
+      "note": "We will build this phase together after launch. Placeholder structure here.",
+      "email_list_goals": {
+        "30_days_post_launch": "100 subscribers",
+        "60_days_post_launch": "500 subscribers",
+        "90_days_post_launch": "1000 subscribers"
+      },
+      "list_building_sources": [
+        "Gumroad Pay What You Want free tier captures emails",
+        "Quick Start PDF lead magnet (free, linked from Etsy listing)",
+        "Post-purchase survey with bonus incentive",
+        "Buyer referrals via email footer"
+      ],
+      "planned_campaigns": {
+        "onboarding_sequence": "3 emails walking new buyers through Days 1-7 (already partially built in Phase 7)",
+        "week_3_engagement": "How is your reset going — value email, no sell",
+        "month_2_upsell": "Introduction of next product or bundle upgrade",
+        "monthly_newsletter": "One value email per month to keep list warm — a tip, a habit, a check-in"
+      },
+      "action": "Come back to Claude after launch and say: 'Ready to build Phase 9 email campaigns. Current list size: [X]. Top buyer feedback was: [Y].'"
+    }
+  },
+
+  "qa_and_iteration": {
+    "acceptance_tests": [
+      "User starts in under 60 seconds via Quick Start page",
+      "Every daily page has exactly one primary action",
+      "No page is visually overwhelming in Canva preview",
+      "Checkpoints explicitly give restart permission — no guilt",
+      "Zero banned words across all 9 chunks",
+      "All CSV fields verified under 200 characters",
+      "Both PDFs open cleanly in Adobe Reader and iPhone Files app",
+      "Mockups look premium — cover could pass for a commercial product",
+      "Etsy listing conversion: favorites/views above 3% in first 48 hours",
+      "Gumroad page conversion above 2% in first week"
+    ],
+    "issue_routing": {
+      "content_issue": "Back to Phase 2 — reopen Claude chunk conversation",
+      "behavioral_logic_issue": "Back to Gemini audit — re-run with specific days flagged",
+      "csv_issue": "Back to Phase 3 — re-export, verify in plain text editor",
+      "design_issue": "Back to Phase 4 — fix Canva master template, regenerate affected pages",
+      "listing_conversion_issue": "Back to Phase 6 — rewrite hook using different competitor hook pattern",
+      "post_launch_content_fix": "Increment version to v1.0.1, update CHANGELOG, re-upload ZIP to both platforms"
+    },
+    "90_day_ranking_milestones": {
+      "week_1": "Listing live. First 5 sales. First 2 reviews.",
+      "week_2": "Raise price to $8.99. A/B test second cover mockup. 10+ sales.",
+      "week_4": "25+ sales. Appear in Etsy search page 1 for long-tail keywords.",
+      "week_8": "50+ reviews. Top 10 for primary keyword. Email list at 200+.",
+      "week_12": "Top 3 Etsy. Gumroad Discover page feature. Email list at 500+. Begin Phase 9 upsell campaign."
+    }
+  },
+
+  "handoff_map": {
+    "note": "Every time Claude needs your manual action, it will say HANDOFF. Every time you need to paste results back, paste them after this phrase: 'PASTE RESULT:'",
+    "handoffs": [
+      {"id": "HANDOFF-1", "phase": "1.1", "action": "Generate front + back cover in ChatGPT using prompts in cover_design block. Return with: 'Covers done, starting Phase 2'"},
+      {"id": "HANDOFF-2", "phase": "2.5", "action": "Concatenate all 9 chunks. Run Gemini audit prompt. Return with: 'PASTE RESULT: [Gemini numbered fix list]'"},
+      {"id": "HANDOFF-3", "phase": "4", "action": "Build Canva template and generate 30 pages + all manual pages. Return with: 'Canva done, page count: [X]'"},
+      {"id": "HANDOFF-4", "phase": "6", "action": "Upload to Etsy + Gumroad. Return with: 'Live on both platforms. Etsy URL: [X]. Gumroad URL: [Y]'"},
+      {"id": "HANDOFF-5", "phase": "8", "action": "After first 10 sales, return with: 'First 10 sales done. Review count: [X]. Top feedback: [Y]'"}
+    ]
+  }
+}

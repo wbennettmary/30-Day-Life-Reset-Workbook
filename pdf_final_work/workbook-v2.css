@@ -1,0 +1,105 @@
+/* === V2 UPGRADE PATCH — add to end of workbook.css === */
+:root {
+  /* add these new tokens to the existing :root block */
+  --forest: #2D4A3E;
+  --blush: #F5E8E4;
+  --blush-rule: #D4BFBA;
+}
+
+/* ============================================================
+   GAP 1 — Daily header anchor
+   Option C: massive forest day-num + 2pt sage rule
+   Why: maximum hierarchy without aggression. A solid block band
+   (Option B) would feel clinical against a "gentle reset" tone.
+   ============================================================ */
+
+.daily-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  column-gap: 24pt;
+  border-bottom: 2pt solid var(--sage);
+  padding-bottom: 14pt;
+  position: relative;
+}
+
+.daily-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4pt;
+  height: 0.5pt;
+  background: var(--sage-soft);
+}
+
+.daily-header .day-num {
+  font-family: var(--serif);
+  font-size: 76pt;        /* up from 56pt */
+  line-height: 0.82;
+  color: var(--forest);   /* was sage-deep */
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  display: block;
+  text-align: right;
+}
+
+/* ============================================================
+   GAP 2 — Reflection container (sacred writing space)
+   ============================================================ */
+
+.daily-footer .reflection {
+  background: var(--blush);
+  border-left: 3pt solid var(--forest);
+  border-radius: 6pt;
+  padding: 14pt 16pt;
+}
+
+.daily-footer .reflection .line {
+  border-bottom: 0.5pt solid var(--blush-rule);
+}
+
+/* ============================================================
+   GAP 3 — Quick Win / Why It Works differentiation
+   Quick Win = action cue (left bar, no box, sans, medium weight)
+   Why It Works = soft aside (italic serif, muted label, bordered)
+   ============================================================ */
+
+.mini-card.quick-win {
+  border: none;
+  border-left: 2.5pt solid var(--sage);
+  background: transparent;
+  border-radius: 0;
+  padding: 4pt 0 4pt 14pt;
+}
+
+.mini-card.quick-win .label {
+  color: var(--sage);
+}
+
+.mini-card.quick-win .text {
+  font-family: var(--sans);
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.mini-card.why-works {
+  background: transparent;
+  border: 0.5pt solid var(--sage-soft);
+}
+
+.mini-card.why-works .label {
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.mini-card.why-works .text {
+  font-style: italic;
+  font-family: var(--serif);
+  font-size: 11.5pt;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
