@@ -3,106 +3,260 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
   
   :root {
     --sage: #848B6F;
+    --sage-light: #A5AD91;
     --ink: #333333;
+    --ink-muted: #666666;
     --bg: #FAF8F6;
+    --gold: #C5A059;
   }
   
+  @page {
+    size: letter;
+    margin: 0;
+  }
+
   body {
     font-family: 'Inter', sans-serif;
     color: var(--ink);
     background-color: var(--bg);
     margin: 0;
-    padding: 1in;
+    padding: 0;
     line-height: 1.6;
+    -webkit-print-color-adjust: exact;
   }
   
-  h1 {
+  .container {
+    padding: 60pt 80pt;
+    max-width: 500pt;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .border-accent {
+    position: absolute;
+    top: 20pt;
+    left: 20pt;
+    right: 20pt;
+    bottom: 20pt;
+    border: 0.5pt solid var(--sage-light);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 40pt;
+  }
+
+  .header h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 32pt;
+    font-size: 38pt;
+    font-weight: 500;
+    color: var(--sage);
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .header p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16pt;
+    color: var(--ink-muted);
+    margin-top: 10pt;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20pt;
     font-weight: 600;
     color: var(--sage);
-    margin-top: 0;
-    margin-bottom: 24pt;
+    margin-top: 30pt;
+    margin-bottom: 15pt;
+    display: flex;
+    align-items: center;
+    gap: 10pt;
+  }
+
+  h2::after {
+    content: "";
+    flex-grow: 1;
+    height: 0.5pt;
+    background: var(--sage-light);
+    opacity: 0.3;
+  }
+
+  .content-block {
+    margin-bottom: 25pt;
+  }
+
+  .content-block p {
+    font-size: 10.5pt;
+    color: var(--ink);
+    margin-bottom: 10pt;
+  }
+
+  .step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 15pt;
+    margin-bottom: 12pt;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18pt;
+    color: var(--sage);
+    width: 25pt;
+    flex-shrink: 0;
+  }
+
+  .step-text b {
+    display: block;
+    font-size: 11pt;
+    margin-bottom: 2pt;
+    color: var(--ink);
+  }
+
+  .step-text span {
+    font-size: 9.5pt;
+    color: var(--ink-muted);
+  }
+
+  .shop-link-box {
+    background: white;
+    border: 0.5pt solid #EFE8DF;
+    padding: 25pt;
+    text-align: center;
+    margin-top: 40pt;
+    border-radius: 2pt;
+  }
+
+  .shop-link-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22pt;
+    color: var(--sage);
+    margin: 0 0 10pt 0;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10pt 25pt;
+    background: var(--sage);
+    color: white;
+    text-decoration: none;
+    font-size: 10pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 15pt;
+    border-radius: 1pt;
+  }
+
+  .footer {
+    margin-top: 50pt;
     text-align: center;
   }
-  
-  h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: 14pt;
-    font-weight: 600;
-    margin-top: 24pt;
-    margin-bottom: 12pt;
-    border-bottom: 1px solid rgba(132, 139, 111, 0.3);
-    padding-bottom: 4pt;
-  }
-  
-  p {
-    font-size: 11pt;
-    margin-bottom: 12pt;
-  }
-  
-  ul, ol {
-    font-size: 11pt;
-    margin-bottom: 16pt;
-    padding-left: 20pt;
-  }
-  
-  li {
-    margin-bottom: 6pt;
-  }
-  
+
   .signature {
-    margin-top: 40pt;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18pt;
+    font-size: 20pt;
     font-style: italic;
     color: var(--sage);
+    margin-bottom: 5pt;
   }
+
+  .handle {
+    font-size: 9pt;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .badge {
+    position: absolute;
+    top: 60pt;
+    right: 80pt;
+    width: 60pt;
+    height: 60pt;
+    border: 0.5pt solid var(--sage-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 10pt;
+    color: var(--sage);
+    text-align: center;
+    opacity: 0.6;
+    transform: rotate(15deg);
+  }
+
 </style>
 </head>
 <body>
 
-  <h1>Welcome to your<br/>30-Day Life Reset</h1>
+  <div class="border-accent"></div>
 
-  <p>Thank you so much for your purchase!</p>
+  <div class="container">
+    
+    <div class="badge">Small<br/>Steps.</div>
 
-  <p>You took a step today toward clarity, calm, and rebuilding your momentum. I created this workbook specifically for people who are feeling stuck and overwhelmed, and I am so excited for you to begin.</p>
+    <div class="header">
+      <h1>Welcome Home.</h1>
+      <p>Thank you for choosing the 30-Day Life Reset.</p>
+    </div>
 
-  <h2>📥 What's Included in your Download:</h2>
-  <ol>
-    <li><strong>30-Day Life Reset Workbook (US Letter)</strong> - Standard size for North America (8.5 x 11 inches).</li>
-    <li><strong>30-Day Life Reset Workbook (A4)</strong> - Standard size for the rest of the world (210 x 297 mm).</li>
-  </ol>
+    <div class="content-block">
+      <p>You took a meaningful step today. This workbook was designed for those quiet moments when you realize life has become a bit too heavy, and you’re ready to find your way back to clarity.</p>
+    </div>
 
-  <h2>🖨️ How to Print at Home</h2>
-  <ol>
-    <li>Open the PDF size that matches your printer paper.</li>
-    <li>In your print settings, select <strong>"Actual Size"</strong> or <strong>"Scale to 100%"</strong> (Do not select "Fit to Page" as it may distort the margins).</li>
-    <li>You can print the entire workbook at once, or just print the Daily Pages one week at a time if you prefer!</li>
-  </ol>
+    <h2>Setting Up</h2>
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-text">
+          <b>Choose Your Size</b>
+          <span>Your download includes both US Letter and A4 PDFs. Choose the one that matches your printer paper.</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-text">
+          <b>Print to Scale</b>
+          <span>In your printer settings, select "Actual Size" or "100% Scale" to ensure the margins and lines are perfect.</span>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-text">
+          <b>Go Digital</b>
+          <span>Prefer a tablet? Import either PDF into apps like GoodNotes or Notability for a paperless experience.</span>
+        </div>
+      </div>
+    </div>
 
-  <h2>📱 How to Use Digitally (iPad / Tablet)</h2>
-  <ol>
-    <li>Save the PDF to your tablet.</li>
-    <li>Open your favorite PDF annotation app (like GoodNotes, Notability, Xodo, or Noteshelf).</li>
-    <li>Import the PDF into the app.</li>
-    <li>You can now write directly on the pages using your stylus or Apple Pencil!</li>
-  </ol>
+    <div class="shop-link-box">
+      <h3>A Quick Favor</h3>
+      <p style="font-size: 10pt; max-width: 300pt; margin: 0 auto;">As a small creator, your reviews are the lifeblood of my shop. If this workbook helps you, please consider leaving a review on Etsy.</p>
+      <a href="https://www.etsy.com/shop/PalettePixelStudio" class="btn">Visit My Shop</a>
+    </div>
 
-  <h2>💬 A Quick Favor...</h2>
-  <p>As a small business owner, reviews mean the absolute world to me. If you are enjoying the workbook and the gentle, anti-hustle approach, it would help my shop out tremendously if you could leave a 5-star review on Etsy.</p>
-  
-  <p style="text-align:center; font-weight: 600; margin: 20pt 0;">[Insert Link to Your Etsy Shop Here]</p>
+    <div class="footer">
+      <div class="signature">Warmly, PalettePixelStudio</div>
+      <div class="handle">ETSY.COM/SHOP/PALETTEPIXELSTUDIO</div>
+    </div>
 
-  <p>If you have <em>any</em> issues with your files, printing, or download, please don't hesitate to message me directly on Etsy before leaving a review. I am always here to help and will make it right!</p>
-
-  <div class="signature">
-    Warmly,<br/>
-    PalettePixelStudio
   </div>
 
 </body>
