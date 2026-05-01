@@ -1,0 +1,960 @@
+﻿/* ============================================================
+   30-DAY LIFE RESET WORKBOOK — Print Stylesheet
+   US Letter, 8.5" × 11"
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Allura&display=swap');
+
+:root {
+  --bg: #FAF8F6;
+  --bg-warm: #EFE8DF;
+  --bg-warm-soft: #F5EFE5;
+  --sage: #848B6F;
+  --sage-deep: #6B7259;
+  --sage-soft: #A8AE93;
+  --sage-tint: #DEE0D3;
+  --ink: #2F2F2D;
+  --ink-soft: #4D4D4D;
+  --ink-muted: #8A8A85;
+  --rule: #C9CBBE;
+  --forest: #2D4A3E;
+  --blush: #F5E8E4;
+  --blush-rule: #D4BFBA;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --script: 'Allura', cursive;
+}
+
+/* ---------- print sizing ---------- */
+@page {
+  size: 210mm 297mm;
+  margin: 0;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #4a4a48;
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* The "stage" — preview-only background, hidden in print */
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 20px 80px;
+}
+
+/* ---------- the page ---------- */
+.page {
+  width: 8.5in;
+  height: 11in;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+  color: var(--ink);
+  font-size: 11pt;
+  line-height: 1.55;
+}
+
+.page:last-child { page-break-after: auto; }
+
+/* page padding wrapper — most pages use this */
+.page-pad {
+  position: absolute;
+  inset: 0.7in 0.75in 0.7in 0.75in;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- folio (page number / book title at corners) ---------- */
+.folio {
+  position: absolute;
+  bottom: 0.4in;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.75in;
+  font-family: var(--sans);
+  font-size: 8.5pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.folio .num { font-variant-numeric: lining-nums; letter-spacing: 0.1em; }
+
+/* ---------- typography primitives ---------- */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 9pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 500;
+}
+
+.eyebrow-ink { color: var(--ink-soft); }
+
+h1.serif, h2.serif, h3.serif, h4.serif, .serif {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+
+h1.serif {
+  font-size: 56pt;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+h2.serif {
+  font-size: 36pt;
+  line-height: 1.1;
+}
+
+h3.serif {
+  font-size: 24pt;
+  line-height: 1.2;
+}
+
+h4.serif {
+  font-size: 18pt;
+  line-height: 1.3;
+}
+
+.script {
+  font-family: var(--script);
+  color: var(--sage);
+  font-weight: 400;
+}
+
+.body p {
+  margin: 0 0 10pt;
+  font-size: 11pt;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+  max-width: 5.6in;
+}
+
+.body p.lead {
+  font-family: var(--serif);
+  font-size: 14pt;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+/* ---------- thin rules with sprig accent ---------- */
+.rule {
+  border: 0;
+  border-top: 0.5pt solid var(--sage-soft);
+  width: 64px;
+  margin: 14pt 0;
+}
+
+.rule.center { margin-left: auto; margin-right: auto; }
+.rule.full { width: 100%; border-top-color: var(--rule); }
+
+.sprig-rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--sage);
+}
+
+.sprig-rule::before, .sprig-rule::after {
+  content: "";
+  flex: 1;
+  border-top: 0.5pt solid var(--sage-soft);
+}
+
+.sprig-rule.short::before, .sprig-rule.short::after { max-width: 36px; }
+
+/* ---------- callouts ---------- */
+.callout {
+  background: var(--bg-warm);
+  border-radius: 6pt;
+  padding: 16pt 20pt;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 12.5pt;
+  line-height: 1.5;
+  color: var(--ink);
+  position: relative;
+}
+
+.callout.sage {
+  background: transparent;
+  border: 0.5pt solid var(--sage-soft);
+  border-left: 2pt solid var(--sage);
+  border-radius: 4pt;
+  padding-left: 18pt;
+  font-style: italic;
+}
+
+.callout.tinted {
+  background: var(--sage-tint);
+  color: var(--ink);
+}
+
+.pullquote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14pt;
+  line-height: 1.5;
+  color: var(--ink);
+  padding: 0 0.4in;
+}
+
+/* ---------- write-in lines & boxes ---------- */
+.line {
+  display: block;
+  border-bottom: 0.5pt solid var(--rule);
+  height: 22pt;
+  margin: 0 0 6pt;
+}
+
+.line.short { width: 60%; }
+.line.tight { height: 18pt; }
+.line.tall { height: 28pt; }
+
+.write-box {
+  border: 0.5pt solid var(--rule);
+  border-radius: 4pt;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 12pt;
+  min-height: 0.6in;
+}
+
+.write-box.warm { background: var(--bg-warm); border-color: transparent; }
+.write-box.sage { background: var(--sage-tint); border-color: var(--sage-soft); }
+
+/* ---------- tables ---------- */
+table.audit, table.tracker {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10pt;
+  font-family: var(--sans);
+}
+
+table.audit th, table.audit td,
+table.tracker th, table.tracker td {
+  padding: 8pt 10pt;
+  text-align: left;
+  border-bottom: 0.5pt solid var(--rule);
+  vertical-align: middle;
+}
+
+table.audit th, table.tracker th {
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 8.5pt;
+  color: var(--sage);
+  border-bottom: 0.75pt solid var(--sage-soft);
+}
+
+table.tracker.grid { font-size: 9pt; line-height: 1.2; }
+table.tracker.grid th, table.tracker.grid td {
+  text-align: center;
+  padding: 1pt 2pt;
+}
+table.tracker.grid td.day {
+  font-weight: 500;
+  font-variant-numeric: lining-nums;
+  width: 8%;
+  border-right: 0.5pt solid var(--rule);
+  background: var(--bg-warm-soft);
+}
+table.tracker.grid .check {
+  width: 10pt;
+  height: 10pt;
+  border: 0.5pt solid var(--sage-soft);
+  border-radius: 2pt;
+  display: inline-block;
+}
+
+/* ---------- circles for rating scales ---------- */
+.scale {
+  display: inline-flex;
+  gap: 6pt;
+  align-items: center;
+}
+
+.scale .dot {
+  width: 14pt;
+  height: 14pt;
+  border-radius: 50%;
+  border: 0.6pt solid var(--sage-soft);
+  display: inline-block;
+}
+
+.dot-num {
+  display: inline-flex;
+  width: 18pt; height: 18pt;
+  border: 0.6pt solid var(--sage-soft);
+  border-radius: 50%;
+  align-items: center; justify-content: center;
+  font-size: 9pt;
+  color: var(--sage);
+  margin: 0 1pt;
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.mood-scale {
+  display: inline-flex;
+  gap: 14pt;
+  font-size: 14pt;
+  align-items: center;
+}
+
+.mood-scale .opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 4pt;
+}
+.mood-scale .opt span.lbl {
+  font-size: 9pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.circle-pick {
+  display: inline-block;
+  border: 0.6pt solid var(--sage-soft);
+  border-radius: 999px;
+  padding: 4pt 12pt;
+  font-size: 10pt;
+  margin: 2pt 4pt 2pt 0;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+}
+
+/* ---------- cover slots ---------- */
+.cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- divider page ---------- */
+.divider {
+  background: var(--bg-warm);
+}
+
+.divider .page-pad {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.divider .week-num {
+  font-family: var(--serif);
+  font-size: 200pt;
+  line-height: 0.85;
+  color: var(--sage);
+  font-weight: 300;
+  letter-spacing: -0.05em;
+  font-style: italic;
+}
+
+/* ---------- daily page layout ---------- */
+.daily {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 12pt;
+  height: 100%;
+}
+
+.daily-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  column-gap: 24pt;
+  border-bottom: 2pt solid var(--sage);
+  padding-bottom: 14pt;
+  position: relative;
+}
+
+.daily-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4pt;
+  height: 0.5pt;
+  background: var(--sage-soft);
+}
+
+.daily-header .day-tag {
+  font-family: var(--sans);
+  font-size: 9pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 500;
+}
+
+.daily-header .day-num {
+  font-family: var(--serif);
+  font-size: 76pt;
+  line-height: 0.82;
+  color: var(--forest);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  display: block;
+  text-align: right;
+}
+
+.daily-header .day-title {
+  font-family: var(--serif);
+  font-size: 22pt;
+  line-height: 1.15;
+  color: var(--ink);
+  font-weight: 400;
+  margin-top: 4pt;
+  max-width: 4.6in;
+}
+
+.daily-header .week-tab {
+  font-family: var(--sans);
+  font-size: 8.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.goal {
+  display: flex;
+  gap: 12pt;
+  align-items: flex-start;
+  background: var(--bg-warm);
+  padding: 12pt 16pt;
+  border-radius: 4pt;
+}
+
+.goal .lbl {
+  font-family: var(--sans);
+  font-size: 8pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 600;
+  white-space: nowrap;
+  padding-top: 2pt;
+}
+
+.goal .text {
+  font-family: var(--serif);
+  font-size: 14pt;
+  line-height: 1.4;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10pt;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: 26pt 1fr;
+  gap: 12pt;
+  align-items: start;
+}
+
+.task .num {
+  width: 22pt;
+  height: 22pt;
+  border-radius: 50%;
+  border: 0.6pt solid var(--sage);
+  color: var(--sage);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 12pt;
+  font-style: italic;
+  background: var(--bg);
+}
+
+.task .label {
+  font-family: var(--sans);
+  font-size: 7.5pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 600;
+  margin-bottom: 2pt;
+  display: block;
+}
+
+.task .body {
+  font-family: var(--sans);
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.daily-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14pt;
+}
+
+.mini-card {
+  border: 0.5pt solid var(--sage-soft);
+  border-radius: 4pt;
+  padding: 10pt 12pt;
+}
+
+.mini-card .label {
+  font-family: var(--sans);
+  font-size: 7.5pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 600;
+  margin-bottom: 4pt;
+}
+
+.mini-card .text {
+  font-family: var(--sans);
+  font-size: 10pt;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.mini-card.warm { background: var(--bg-warm); border-color: transparent; }
+
+/* GAP 3 — Quick Win: action cue, left bar, no box */
+.mini-card.quick-win {
+  border: none;
+  border-left: 2.5pt solid var(--sage);
+  background: transparent;
+  border-radius: 0;
+  padding: 4pt 0 4pt 14pt;
+}
+
+.mini-card.quick-win .label {
+  color: var(--sage);
+}
+
+.mini-card.quick-win .text {
+  font-family: var(--sans);
+  font-size: 10.5pt;
+  line-height: 1.5;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* GAP 3 — Why It Works: soft aside, italic, muted label */
+.mini-card.why-works {
+  background: transparent;
+  border: 0.5pt solid var(--sage-soft);
+}
+
+.mini-card.why-works .label {
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.mini-card.why-works .text {
+  font-style: italic;
+  font-family: var(--serif);
+  font-size: 11.5pt;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.daily-footer {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 14pt;
+  align-items: stretch;
+}
+
+.daily-footer .reflection {
+  background: var(--blush);
+  border-left: 3pt solid var(--forest);
+  border-radius: 6pt;
+  padding: 14pt 16pt;
+}
+
+.daily-footer .reflection .line {
+  border-bottom: 0.5pt solid var(--blush-rule);
+}
+
+.tomorrow-strip {
+  display: flex;
+  align-items: center;
+  gap: 10pt;
+  font-family: var(--sans);
+  font-size: 8.5pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 500;
+  border-top: 0.5pt solid var(--sage-soft);
+  padding-top: 8pt;
+}
+
+.tomorrow-strip .text {
+  font-family: var(--serif);
+  font-size: 11pt;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+/* ---------- decorative botanical sprig (svg) ---------- */
+.sprig {
+  display: inline-block;
+  width: 22pt;
+  height: 14pt;
+  color: var(--sage);
+  vertical-align: middle;
+}
+
+.corner-leaf {
+  position: absolute;
+  width: 110pt;
+  height: 110pt;
+  color: var(--sage-soft);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.corner-leaf.tl { top: 0.35in; left: 0.35in; transform: rotate(0deg); }
+.corner-leaf.tr { top: 0.35in; right: 0.35in; transform: scaleX(-1); }
+.corner-leaf.bl { bottom: 0.35in; left: 0.35in; transform: scaleY(-1); }
+.corner-leaf.br { bottom: 0.35in; right: 0.35in; transform: scale(-1, -1); }
+
+/* ---------- cover & half-title ---------- */
+.title-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.title-page .page-pad {
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- TOC ---------- */
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans);
+}
+
+.toc-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 8pt;
+  padding: 5pt 0;
+  border-bottom: 0.4pt dotted var(--rule);
+  font-size: 10.5pt;
+}
+
+.toc-list li.section {
+  font-family: var(--serif);
+  font-size: 14pt;
+  color: var(--sage);
+  border-bottom: 0.5pt solid var(--sage-soft);
+  margin-top: 14pt;
+  padding-bottom: 6pt;
+  font-style: italic;
+}
+
+.toc-list li .ttl { color: var(--ink); }
+.toc-list li .pg { color: var(--ink-muted); margin-left: auto; font-variant-numeric: lining-nums; }
+.toc-list li .leader { flex: 1; border-bottom: 0.4pt dotted var(--rule); margin: 0 6pt; transform: translateY(-3px); }
+
+/* ---------- 4-week roadmap ---------- */
+.weeks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12pt;
+  margin-top: 10pt;
+}
+
+.week-card {
+  background: var(--bg);
+  border: 0.5pt solid var(--sage-soft);
+  border-radius: 6pt;
+  padding: 18pt 16pt;
+  display: flex;
+  flex-direction: column;
+  gap: 8pt;
+}
+
+.week-card.alt { background: var(--bg-warm); border-color: transparent; }
+
+.week-card .num {
+  font-family: var(--serif);
+  font-size: 36pt;
+  color: var(--sage);
+  line-height: 1;
+  font-style: italic;
+}
+
+.week-card .ttl {
+  font-family: var(--serif);
+  font-size: 16pt;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.week-card .meta {
+  font-family: var(--sans);
+  font-size: 8.5pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.week-card .desc {
+  font-family: var(--sans);
+  font-size: 9.5pt;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* ---------- checkpoint pages ---------- */
+.checkpoint .lbl {
+  font-family: var(--sans);
+  font-size: 9pt;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 600;
+  margin-bottom: 4pt;
+}
+
+.checkpoint .q {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13pt;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 6pt;
+}
+
+.checkpoint .group { margin-bottom: 12pt; }
+
+/* ---------- mood log grid ---------- */
+.mood-grid {
+  display: grid;
+  grid-template-columns: 0.7in repeat(7, 1fr);
+  border-top: 0.5pt solid var(--rule);
+}
+
+.mood-grid > div {
+  border-bottom: 0.5pt solid var(--rule);
+  border-right: 0.5pt solid var(--rule);
+  padding: 10pt 6pt;
+  text-align: center;
+  font-size: 9pt;
+  font-family: var(--sans);
+}
+
+.mood-grid > div:nth-child(8n+1) {
+  text-align: left;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--sage);
+  font-size: 12pt;
+  border-left: 0.5pt solid var(--rule);
+}
+
+.mood-grid > div.head {
+  font-family: var(--sans);
+  font-size: 8pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.mood-cell .opts {
+  display: flex;
+  justify-content: center;
+  gap: 3pt;
+  font-size: 13pt;
+}
+
+/* ---------- tiny habits sections ---------- */
+.tiny-section { margin-bottom: 14pt; }
+
+.tiny-section .head {
+  font-family: var(--sans);
+  font-size: 9pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 600;
+  margin-bottom: 6pt;
+  border-bottom: 0.5pt solid var(--sage-soft);
+  padding-bottom: 4pt;
+}
+
+.tiny-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5pt 24pt;
+  counter-reset: tinyitem;
+}
+
+.tiny-list li {
+  display: grid;
+  grid-template-columns: 22pt 1fr;
+  gap: 6pt;
+  font-family: var(--sans);
+  font-size: 9pt;
+  line-height: 1.4;
+  color: var(--ink);
+  align-items: start;
+  break-inside: avoid;
+}
+
+.tiny-list li > span:last-child {
+  text-wrap: pretty;
+}
+
+.tiny-list li::before {
+  counter-increment: tinyitem;
+  content: counter(tinyitem, decimal-leading-zero);
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--sage);
+  font-size: 10.5pt;
+  line-height: 1.4;
+}
+
+/* ---------- toolbar (preview only) ---------- */
+.toolbar {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(28, 28, 26, 0.92);
+  color: #f5f1ea;
+  padding: 12px 16px;
+  border-radius: 999px;
+  display: flex;
+  gap: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.toolbar button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: inherit;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.toolbar button:hover { background: rgba(255, 255, 255, 0.1); }
+.toolbar button.primary { background: var(--sage); border-color: var(--sage); }
+.toolbar button.primary:hover { background: var(--sage-deep); }
+
+@media print {
+  html, body { background: white; }
+  .toolbar { display: none !important; }
+  .stage { padding: 0; gap: 0; }
+  .page { box-shadow: none; }
+}
+
+/* ---------- shared layout helpers ---------- */
+.center-text { text-align: center; }
+.flex-1 { flex: 1; }
+.spacer-sm { height: 10pt; }
+.spacer-md { height: 18pt; }
+.spacer-lg { height: 30pt; }
+.muted { color: var(--ink-muted); }
+.italic { font-style: italic; }
+
+.label-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8pt;
+  margin: 6pt 0;
+}
+
+.label-line .lbl {
+  font-family: var(--sans);
+  font-size: 9pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.label-line .line {
+  flex: 1;
+  margin: 0;
+  border-bottom: 0.5pt solid var(--rule);
+  height: 14pt;
+}
+
+/* lined-paper area for journaling */
+.journal-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.journal-lines .line {
+  border-bottom: 0.5pt solid var(--rule);
+  height: 28pt;
+  margin: 0;
+}
